@@ -1,0 +1,11 @@
+version: 0.0
+os: windows
+files:
+  - source: *
+    destination: c:\inetpub\wwwroot
+hooks:
+  BeforeInstall:
+    - location: \before-install.bat
+      timeout: 900
+      runas: Administrator
+   

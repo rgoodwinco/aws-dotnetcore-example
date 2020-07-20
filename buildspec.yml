@@ -1,0 +1,16 @@
+version: 0.2
+phases:
+  install:
+    runtime-verions:
+      dotnet: 3.1
+  pre_build:
+    commands:
+      - dotnet restore
+  build:
+    commands:
+      - dotnet publish --configuration Release --self-contained false --runtime win10-x86 -o my_publish
+artifacts:
+  files:
+    - 'my_publish/**/*'
+    - appspec.yml
+  #base-directory: build
